@@ -13,6 +13,7 @@ import StyleSheet from "./Components/Css/Stylesheet";
 import Form from "./Components/Form";
 import Composed from "./Components/PureComp/Composed";
 import LifeCycleA from "./Components/LifeCycle/LifeCycleA";
+import FormWithGeneralStateHandling from "./Components/FormWithGeneralStateHandling";
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
       <div className="App">
         <LifeCycleA head="Some Title" size={10} />
         <Composed />
+        <FormWithGeneralStateHandling />
         <Form />
         <Form message="Hi" />
         <StyleSheet useStyle={useStyle} />

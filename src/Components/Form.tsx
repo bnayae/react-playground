@@ -48,33 +48,36 @@ class Form extends React.Component<MyProps, MyState> {
     const { userName, comment, topic, summary } = this.state; // destructor
 
     return (
-      <form action="" onSubmit={this.onSubmitHandler}>
-        <div>
-          <label>user name:</label>
-          <input
-            type="text"
-            value={userName}
-            onChange={this.handleUserChanged}
-          />
-          <label>{userName}</label>
-        </div>
-        <div>
-          <label>comment:</label>
-          <textarea value={comment} onChange={this.handleCommentChanged} />
-          <label>{comment}</label>
-        </div>
-        <div>
-          <label>Topic:</label>
-          <select value={topic} onChange={this.handleTopicChanged}>
-            <option value="react">React</option>
-            <option value="angular">Angular</option>
-            <option value="vue">Vue</option>
-          </select>
-          <label>{topic}</label>
-        </div>
-        <button type="submit">Submit</button>
-        <hr />
-      </form>
+      <>
+        <h3>Form ({this.props.message})</h3>
+        <form action="" onSubmit={this.onSubmitHandler}>
+          <div>
+            <label>user name:</label>
+            <input
+              type="text"
+              value={userName}
+              onChange={this.handleUserChanged}
+            />
+            <label>{userName}</label>
+          </div>
+          <div>
+            <label>comment:</label>
+            <textarea value={comment} onChange={this.handleCommentChanged} />
+            <label>{comment}</label>
+          </div>
+          <div>
+            <label>Topic:</label>
+            <select value={topic} onChange={this.handleTopicChanged}>
+              <option value="react">React</option>
+              <option value="angular">Angular</option>
+              <option value="vue">Vue</option>
+            </select>
+            <label>{topic}</label>
+          </div>
+          <button type="submit">Submit</button>
+          <hr />
+        </form>
+      </>
     );
   }
 }
