@@ -8,11 +8,12 @@ function ListSample() {
     </p>
   ));
   return (
-    <div>
+    // <> is React.Fragment shortcut
+    <>
       <h3>indexed (only for static not sortable list)</h3>
       {namesJsx}
       <hr />
-    </div>
+    </>
   );
 }
 

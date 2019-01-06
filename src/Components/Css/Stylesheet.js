@@ -10,14 +10,15 @@ function Stylesheet(props /*: IStyleProps*/) {
   let className1 = props.useStyle ? "primary" : "";
   let className2 = props.useStyle ? "" : "primary";
   return (
-    <div>
+    // <> is React.Fragment shortcut
+    <>
       <h1 className={`${className1} font-xl`}>A</h1>
       <h1 className={className2}>B</h1>
       <h1 style={heading}>C</h1>
       <h1 className={myStyle.success}>Success</h1>
       <h1 className={myStyle.error}>Error</h1>
       <hr />
-    </div>
+    </>
   );
 }
 

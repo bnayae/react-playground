@@ -4,16 +4,8 @@ export default class Pure extends React.PureComponent<
   { name: string },
   { changed: string }
 > {
-  shouldComponentUpdate = (
-    nextProps: Readonly<{ name: string }>,
-    nextState: Readonly<{ changed: string }>
-  ) => {
-    if (nextProps.name == "ignore") return false;
-    // recursion: this.setState({ changed: `${nextProps} -> ${nextState}` });
-    return true;
-  };
-
   render() {
+    console.log(`Pure render "${this.props.name}"`); //handle should component update with a shallow comparison of props and state
     return <div>Pure {this.props.name}</div>;
   }
 }

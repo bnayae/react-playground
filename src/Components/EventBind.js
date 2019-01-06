@@ -25,7 +25,8 @@ class EventBind extends Component {
 
   render() {
     return (
-      <div>
+      // <> is React.Fragment shortcut
+      <>
         <h3>{this.state.message}</h3>
         <button name="Safe Lambda" onClick={this.safeLambdaClickHandler}>
           Class Lambda
@@ -46,7 +47,7 @@ class EventBind extends Component {
         >
           Nested Lambda
         </button>
-      </div>
+      </>
     );
   }
 }

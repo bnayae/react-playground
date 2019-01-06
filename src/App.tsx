@@ -12,6 +12,8 @@ import ListSample from "./Components/ListSample";
 import StyleSheet from "./Components/Css/Stylesheet";
 import Form from "./Components/Form";
 import Composed from "./Components/PureComp/Composed";
+import LifeCycleA from "./Components/LifeCycle/LifeCycleA";
+
 class App extends Component {
   render() {
     var now = new Date();
@@ -19,6 +21,7 @@ class App extends Component {
     let useStyle = ticks % 2 == 0;
     return (
       <div className="App">
+        <LifeCycleA head="Some Title" size={10} />
         <Composed />
         <Form />
         <Form message="Hi" />

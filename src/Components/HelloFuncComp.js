@@ -15,9 +15,10 @@ import React from "react";
 export const Greet = props => {
   console.log(props);
   return (
-    <div>
+    // <> is React.Fragment shortcut
+    <>
       <h1>Hello {props.Name} (Lambda with specific name)</h1>
       {props.children}
-    </div>
+    </>
   );
 };

@@ -43,12 +43,12 @@ class Counter extends Component {
 		this.increment();
 	}
 
-	render() {
+	render() {// <> is React.Fragment shortcut
 		return (
-			<div>
+			<>
 				<div>Count: {this.state.count}</div>
 				<button onClick={() => this.increment5()}>{this.state.label}</button>
-			</div>
+			</>
 		);
 	}
 }

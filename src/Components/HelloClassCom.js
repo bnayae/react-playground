@@ -6,11 +6,12 @@ import React, { Component } from "react";
 
 class Welcome extends Component {
   render() {
+    // <> is React.Fragment shortcut
     return (
-      <div>
+      <>
         <h1>Welcome {this.props.Name}(class component)</h1>
         {this.props.children}
-      </div>
+      </>
     );
   }
 }
