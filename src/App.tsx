@@ -14,6 +14,7 @@ import Form from "./Components/Form";
 import Composed from "./Components/PureComp/Composed";
 import LifeCycleA from "./Components/LifeCycle/LifeCycleA";
 import FormWithGeneralStateHandling from "./Components/FormWithGeneralStateHandling";
+import FormWithCentralStateHandling from "./Components/FormWithCentralStateHandling";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
       <div className="App">
         <LifeCycleA head="Some Title" size={10} />
         <Composed />
+        <FormWithCentralStateHandling />
         <FormWithGeneralStateHandling />
         <Form />
         <Form message="Hi" />

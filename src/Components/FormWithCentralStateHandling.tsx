@@ -1,38 +1,47 @@
 import React, { Component } from "react";
 
-class FormWithGeneralStateHandling extends Component {
-  constructor(props) {
-    super(props);
+export interface MyProps {
+  message: string;
+}
+type MyState = {
+  userName: string;
+  comment?: string;
+  topic: string;
+  summary?: string;
+};
 
+class FormWithCentralStateHandling extends React.Component<MyProps, MyState> {
+  constructor(props: Readonly<MyProps> = { message: "" }) {
+    super(props);
     this.state = {
-      userName: "bnaya",
-      comment: "",
-      topic: "react",
-      summary: ""
+      userName: this.props.message,
+      topic: "react"
     };
   }
 
-  handleChange = e => {
+  static defaultProps: MyProps = { message: "default" }; // default for props
+
+  handleChange = (e: any) => {
     // this syntax preserve 'this' like the use of 'bind'
 
     // If you are using babel, you can use ES 6 dictionary syntax
     // let change = { [e.target.name] = e.target.value }
-    let change = {};
+    let change: any = {};
     change[e.target.name] = e.target.value;
     this.setState(change);
   };
 
-  onSubmitHandler = event => {
+  onSubmitHandler = (event: any) => {
     alert(`${this.state.userName}: ${this.state.topic}, ${this.state.comment}`);
     event.preventDefault();
   };
 
   render() {
-    const { userName, comment, topic } = this.state; // destructor
+    const { userName, comment, topic, summary } = this.state; // destructor
 
     return (
       <>
-        <h3>General Form Handler</h3>
+        <h3>Form Central ({this.props.message})</h3>
         <form action="" onSubmit={this.onSubmitHandler}>
           <div>
             <label>user name:</label>
@@ -70,4 +79,4 @@ class FormWithGeneralStateHandling extends Component {
   }
 }
 
-export default FormWithGeneralStateHandling;
+export default FormWithCentralStateHandling;
